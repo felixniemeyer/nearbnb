@@ -1,26 +1,41 @@
 {
-  "name": "rust-status-message-builder",
+  "name": "nearbnb",
   "version": "1.0.0",
-  "description": "Compiles NEAR Protocol example of setting and retrieving a status message per NEAR account",
+  "description": "let your rooms and houses on a blockchain",
   "scripts": {
-    "build": "cargo build --target wasm32-unknown-unknown --release",
-    "postbuild": "cp target/wasm32-unknown-unknown/release/status_message.wasm ./res/"
+    "build-contract": "cd contract && cargo build --target wasm32-unknown-unknown --release",
+    "postbuild-contract": "cp contract/target/wasm32-unknown-unknown/release/status_message.wasm ./contract/out/main.wasm",
+    "build-ui": "cd ui && npx webpack --config webpack-prod.js",
+    "dev-ui": "npx webpack --config ui/webpack-dev.js", 
+	"serve-ui": "node ui/serve.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/near-examples/rust-status-message.git"
+    "url": "git+https://github.com/felixniemeyer/nearbnb"
   },
   "keywords": [
     "near-protocol",
     "blockchain",
     "rust",
-    "smart-contract"
+    "smart-contract",
+    "airbnb"
   ],
-  "author": "Mike Purvis",
+  "author": "Felix Paul Niemeyer",
   "license": "(MIT AND Apache-2.0)",
   "bugs": {
-    "url": "https://github.com/near-examples/rust-status-message/issues"
+    "url": "https://github.com/felixniemeyer/nearbnb/issues"
   },
-  "homepage": "https://github.com/near-examples/rust-status-message#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/felixniemeyer/nearbnb#readme",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.1.4",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.6.12",
+    "css-loader": "^4.3.0",
+    "express": "^4.16.3"
+  }
 }
