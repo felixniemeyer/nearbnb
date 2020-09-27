@@ -6,3 +6,4 @@ module.exports = merge(common, {
   watch: true,
   devtool: 'inline-source-map'
 })
+

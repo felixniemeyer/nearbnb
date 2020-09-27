@@ -10,25 +10,35 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.vue$/, 
-				loader: 'vue-loader' 
-			}, 
-			{
-				test: /\.css$/,
+				test: /\.vue$/,
 				use: [
-					'vue-style-loader', 
-					'css-loader'
+					{
+						loader: 'vue-loader',
+					}
 				]
 			},
 			{
-				test: /\.s[c|a]ss$/,
+				test: /\.css$/,
 				use: [
-					'vue-style-loader', 
-					'css-loader',
 					{
-						loader: 'sass-loader',
-						options: {
-						}
+						loader: 'style-loader' 
+					},
+					{
+						loader: 'css-loader' 
+					}
+				]
+			},
+			{
+				test: /\.scss$/,
+				use: [
+					{
+						loader: 'style-loader' 
+					},
+					{
+						loader: 'css-loader' 
+					},
+					{
+						loader: 'sass-loader' 
 					}
 				]
 			}

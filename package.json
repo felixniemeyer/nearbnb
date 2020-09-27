@@ -6,8 +6,8 @@
     "build-contract": "cd contract && cargo build --target wasm32-unknown-unknown --release",
     "postbuild-contract": "cp contract/target/wasm32-unknown-unknown/release/status_message.wasm ./contract/out/main.wasm",
     "build-ui": "cd ui && npx webpack --config webpack-prod.js",
-    "dev-ui": "npx webpack --config ui/webpack-dev.js", 
-	"serve-ui": "node ui/serve.js"
+    "dev-ui": "npx webpack --config ui/webpack-dev.js",
+    "serve-ui": "node ui/serve.js"
   },
   "repository": {
     "type": "git",
@@ -27,15 +27,18 @@
   },
   "homepage": "https://github.com/felixniemeyer/nearbnb#readme",
   "devDependencies": {
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-merge": "^5.1.4",
+    "buefy": "^0.9.3",
+    "css-loader": "^4.3.0",
+    "express": "^4.16.3",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
     "vue": "^2.6.12",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.12",
-    "css-loader": "^4.3.0",
-    "express": "^4.16.3"
-  }
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.1.4"
+  },
+  "dependencies": {}
 }
